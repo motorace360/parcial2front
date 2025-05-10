@@ -132,31 +132,32 @@ function App() {
         <div className="results">
           <div className="score-summary">
             <h3>Puntuación Final</h3>
-            <p className="score">
-              <span className="correct-score">✓ Correctas: {results.correct}</span>
-              <span className="incorrect-score">✗ Incorrectas: {results.incorrect}</span>
-            </p>
+            <div className="score">
+              <p className="correct-score">✓ Correctas: {results.correct}</p>
+              <p className="incorrect-score">✗ Incorrectas: {results.incorrect}</p>
+            </div>
             <p className="percentage">
               {Math.round((results.correct / questions.length) * 100)}% de aciertos
             </p>
           </div>
+          
           <div className="answers-review">
             <h3>Revisión de Respuestas</h3>
             {results.details.map((detail, i) => (
               <div key={i} className={`answer-detail ${detail.isCorrect ? 'correct' : 'incorrect'}`}>
-                <h4>Pregunta {i + 1}</h4>
+                <h4>Pregunta {i + 1}:</h4>
                 <p className="question-text">{questions[i].question}</p>
                 <div className="answer-comparison">
                   <p>
-                    <strong>Tu respuesta:</strong> 
+                    <strong>Tu respuesta: </strong>
                     <span className={detail.isCorrect ? 'correct-text' : 'incorrect-text'}>
                       {userAnswers[i]}
                     </span>
                   </p>
                   {!detail.isCorrect && (
                     <p>
-                      <strong>Respuesta correcta:</strong> 
-                      <span className="correct-text">{detail.correctAnswer}</span>
+                      <strong>Respuesta correcta: </strong>
+                      <span className="correct-text">{questions[i].correctAnswer}</span>
                     </p>
                   )}
                 </div>

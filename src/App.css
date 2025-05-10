@@ -105,6 +105,8 @@
   margin: 1rem 0;
   border-radius: 8px;
   transition: transform 0.2s ease;
+  color: white;
+  text-align: left;
 }
 
 .answer-detail:hover {
@@ -121,84 +123,50 @@
   border-left: 4px solid #f44336;
 }
 
-.play-again-button {
-  margin-top: 2rem;
-  width: 100%;
-  padding: 1.2rem;
+.answer-detail h4 {
+  margin: 0 0 1rem 0;
+  color: #646cff;
+}
+
+.answer-detail .question-text {
   font-size: 1.2rem;
-  background-color: #646cff;
-  transition: all 0.3s ease;
-}
-
-.play-again-button:hover {
-  background-color: #535bf2;
-  transform: translateY(-2px);
-}
-
-/* Mensaje de error */
-
-.error-container {
-  background-color: rgba(244, 67, 54, 0.1);
-  border: 2px solid #f44336;
-  border-radius: 8px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 600px;
-}
-
-.error-container h2 {
-  color: #f44336;
   margin-bottom: 1rem;
+  color: white;
 }
 
-/* Nueva visualización de resultados */
+.answer-comparison {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.answer-comparison p {
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.correct-text {
+  color: #4CAF50 !important;
+  font-weight: bold;
+}
+
+.incorrect-text {
+  color: #f44336 !important;
+  font-weight: bold;
+}
 
 .score-summary {
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
-}
-
-.score {
-  display: flex;
-  justify-content: space-around;
-  margin: 1rem 0;
-  font-size: 1.2rem;
-}
-
-.correct-score {
-  color: #4CAF50;
-}
-
-.incorrect-score {
-  color: #f44336;
+  color: white;
 }
 
 .percentage {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #646cff;
-}
-
-.answer-comparison {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 6px;
-  margin-top: 0.5rem;
-}
-
-.correct-text {
-  color: #4CAF50;
-  font-weight: 500;
-}
-
-.incorrect-text {
-  color: #f44336;
-  font-weight: 500;
-}
-
-.question-text {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
