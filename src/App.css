@@ -150,3 +150,55 @@
   color: #f44336;
   margin-bottom: 1rem;
 }
+
+/* Nueva visualización de resultados */
+
+.score-summary {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.correct-score {
+  color: #4CAF50;
+}
+
+.incorrect-score {
+  color: #f44336;
+}
+
+.percentage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #646cff;
+}
+
+.answer-comparison {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.correct-text {
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+.incorrect-text {
+  color: #f44336;
+  font-weight: 500;
+}
+
+.question-text {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
