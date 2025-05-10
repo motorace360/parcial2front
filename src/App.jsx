@@ -47,9 +47,10 @@ function App() {
   };
 
   const handleAnswerSelect = (questionIndex, answer) => {
+    // Asegurarse de que la respuesta se guarde exactamente como se muestra
     setUserAnswers(prev => ({
       ...prev,
-      [questionIndex]: answer
+      [questionIndex]: answer.trim()
     }));
   };
 
@@ -151,20 +152,13 @@ function App() {
                   <p>
                     <strong>Tu respuesta: </strong>
                     <span className={detail.isCorrect ? 'correct-text' : 'incorrect-text'}>
-                      {userAnswers[i]}
+                      {detail.userAnswer}
                     </span>
                   </p>
-                  {!detail.isCorrect && (
-                    <p>
-                      <strong>Respuesta correcta: </strong>
-                      <span className="correct-text">{questions[i].correctAnswer}</span>
-                    </p>
-                  )}
-                  {!detail.isCorrect && detail.normalizedCorrect === detail.normalizedUser && (
-                    <p className="format-note">
-                      <em>(La respuesta es correcta pero el formato era diferente)</em>
-                    </p>
-                  )}
+                  <p>
+                    <strong>Respuesta correcta: </strong>
+                    <span className="correct-text">{detail.correctAnswer}</span>
+                  </p>
                 </div>
               </div>
             ))}
