@@ -7,6 +7,8 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [userAnswers, setUserAnswers] = useState({});
   const [results, setResults] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const topics = [
     'religion',
@@ -18,11 +20,29 @@ function App() {
 
   const handleTopicSelect = async (topic) => {
     try {
-      setGameState('playing');
-      const res = await axios.post('https://parcial2back-omega.vercel.app/api/questions/generate', { topic });
-      setQuestions(res.data.questions);
+      setError(null);
+      setLoading(true);
+      const res = await axios.post('https://parcial2back-omega.vercel.app/api/questions/generate', 
+        { topic },
+        { 
+          timeout: 20000,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      
+      if (res.data.success) {
+        setQuestions(res.data.questions);
+        setGameState('playing');
+      } else {
+        throw new Error('No se pudieron obtener las preguntas');
+      }
     } catch (error) {
       console.error('Error:', error);
+      setError(error.response?.data?.error || 'Error al conectar con el servidor');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -45,6 +65,16 @@ function App() {
       console.error('Error:', error);
     }
   };
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <h2>Error</h2>
+        <p>{error}</p>
+        <button onClick={() => setError(null)}>Intentar de nuevo</button>
+      </div>
+    );
+  }
 
   if (gameState === 'initial') {
     return (
