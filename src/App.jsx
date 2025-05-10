@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState(null);
 
   const handleSubmit = async () => {
-    const res = await axios.post('http://localhost:5000/api/questions/generate', { topic });
+    const res = await axios.post('https://parcial2back-omega.vercel.app/api/questions/generate', { topic });
     setData(res.data);
   };
 
