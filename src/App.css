@@ -40,3 +40,86 @@
 .read-the-docs {
   color: #888;
 }
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.topic-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.question-card {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.option-button {
+  padding: 0.8rem;
+}
+
+.option-button.selected {
+  background-color: #646cff;
+  color: white;
+}
+
+.submit-button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #4CAF50;
+}
+
+.results {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.answer-detail {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+
+.answer-detail.correct {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.answer-detail.incorrect {
+  background-color: rgba(244, 67, 54, 0.2);
+}
+
+.play-again-button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #646cff;
+}
