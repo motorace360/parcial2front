@@ -160,6 +160,11 @@ function App() {
                       <span className="correct-text">{questions[i].correctAnswer}</span>
                     </p>
                   )}
+                  {!detail.isCorrect && detail.normalizedCorrect === detail.normalizedUser && (
+                    <p className="format-note">
+                      <em>(La respuesta es correcta pero el formato era diferente)</em>
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
